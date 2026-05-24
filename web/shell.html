@@ -37,11 +37,13 @@
 <body>
     <div class="loading" id="loading"><span>Loading TimeEcho Snake...</span></div>
     <script>
-        Module = {};
-        Module.onRuntimeInitialized = function() {
+        setInterval(function(){
             var el = document.getElementById('loading');
-            if (el) el.style.display = 'none';
-        };
+            if (el && document.querySelector('canvas')) {
+                el.style.display = 'none';
+                el.parentNode.removeChild(el);
+            }
+        }, 100);
     </script>
     {{{ SCRIPT }}}
 </body>
