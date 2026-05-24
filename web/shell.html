@@ -35,15 +35,23 @@
     </style>
 </head>
 <body>
+    <style>
+        #loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; }
+        canvas { display: block; }
+    </style>
+    <canvas id="canvas"></canvas>
     <div class="loading" id="loading"><span>Loading TimeEcho Snake...</span></div>
     <script>
-        setInterval(function(){
+        (function() {
             var el = document.getElementById('loading');
-            if (el && document.querySelector('canvas')) {
-                el.style.display = 'none';
-                el.parentNode.removeChild(el);
-            }
-        }, 100);
+            var interval = setInterval(function() {
+                var c = document.getElementById('canvas');
+                if (c && c.width > 0 && c.height > 0) {
+                    if (el) { el.style.display = 'none'; el.parentNode.removeChild(el); }
+                    clearInterval(interval);
+                }
+            }, 100);
+        })();
     </script>
     {{{ SCRIPT }}}
 </body>
