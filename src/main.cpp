@@ -1,5 +1,8 @@
 #include "raylib.h"
 #include "Game.h"
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
 
 Game game;
 
