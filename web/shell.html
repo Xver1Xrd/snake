@@ -35,7 +35,14 @@
     </style>
 </head>
 <body>
-    <div class="loading"><span>Loading TimeEcho Snake...</span></div>
+    <div class="loading" id="loading"><span>Loading TimeEcho Snake...</span></div>
+    <script>
+        Module = {};
+        Module.onRuntimeInitialized = function() {
+            var el = document.getElementById('loading');
+            if (el) el.style.display = 'none';
+        };
+    </script>
     {{{ SCRIPT }}}
 </body>
 </html>
