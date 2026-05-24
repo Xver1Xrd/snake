@@ -42,6 +42,9 @@
     <canvas id="canvas"></canvas>
     <div class="loading" id="loading"><span>Loading TimeEcho Snake...</span></div>
     <script>
+        Module = {
+            canvas: document.getElementById('canvas')
+        };
         (function() {
             var el = document.getElementById('loading');
             var interval = setInterval(function() {
