@@ -1,0 +1,11 @@
+build/
+build-web/
+emsdk/
+*.o
+*.obj
+*.exe
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CMakeConfigureLog.yaml
